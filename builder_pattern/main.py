@@ -80,9 +80,9 @@ class MargaritaPizzaBuilder(BasePizzaBuilder):
     def __init__(self):
         self.pizza: Pizza = Pizza('Margarita')
         self.pizza.cooking_time = 15
+        self.pizza.price = 700
 
     def get_pizza(self) -> Pizza:
-        self.pizza.price = 700
         return self.pizza
 
     def append_topping(self, additionally: list[ToppingEnum] | None = None) -> object:
@@ -112,9 +112,9 @@ class PepperoniPizzaBuilder(BasePizzaBuilder):
     def __init__(self):
         self.pizza: Pizza = Pizza('Pepperoni')
         self.pizza.cooking_time = 20
+        self.pizza.price = 800
 
     def get_pizza(self) -> Pizza:
-        self.pizza.price = 800
         return self.pizza
 
     def append_topping(self, additionally: list[ToppingEnum] | None = None) -> object:
@@ -165,5 +165,4 @@ if __name__ == '__main__':
     print(result)
 
     director.set_builder(builder2)
-    result = director.make_pizza_base_args()
     print(result)
